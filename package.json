@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "a project for learning backend",
+  "keywords": [
+    "backend",
+    "jaavascript"
+  ],
+  "license": "ISC",
+  "author": "Mayannk Vishwakarma",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
