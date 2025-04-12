@@ -50,7 +50,7 @@ const userSchema = new Schema(
     timestamps: true
 })
 
-userSchema.pre("save", async function (next) {
+userSchema.pre("save", async function (next) {  // mongoose middleware "pre"
     if(!this.isModified("password")) return next();
 
     this.password = await bcrypt.hash(this.password, 10)
