@@ -43,11 +43,11 @@ dotenv.config({
 
 
 import mongoose from "mongoose";
+dotenv.config({ path: "./.env" });
+
 import dotenv from "dotenv";
 import { DB_NAME } from "./constants.js";
 import { app } from "./app.js";  // ✅ Import the configured app
-
-dotenv.config({ path: "./.env" });
 
 (async () => {
     try {

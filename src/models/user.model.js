@@ -45,12 +45,14 @@ const userSchema = new Schema(
         refreshToken: {
             type: String
         }
-},
-{
-    timestamps: true
-})
 
-userSchema.pre("save", async function (next) {  // mongoose middleware "pre"
+    },
+    {
+        timestamps: true
+    }
+)
+
+userSchema.pre("save", async function (next) {
     if(!this.isModified("password")) return next();
 
     this.password = await bcrypt.hash(this.password, 10)
@@ -89,4 +91,3 @@ userSchema.methods.generateRefreshToken = function(){
 }
 
 export const User = mongoose.model("User", userSchema)
-
